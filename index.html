@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PW Music menyediakan jasa produksi musik, remix, mixing, mastering, dan jingle secara profesional dengan harga terjangkau.">
+  <meta name="keywords" content="musik, remix, produksi musik, mixing, mastering, jingle, PW Music">
+  <meta name="author" content="PW Music">
+
+  <title>PW Music | Music Production & Remix Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Outfit', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #0d001a, #330033);
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 1rem 2rem;
+      background-color: #0a0014;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 40px;
+      margin-right: 12px;
+    }
+    .logo span {
+      font-size: 1.5rem;
+      color: #ff00cc;
+      font-weight: 600;
+    }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 0.8rem;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff00cc;
+    }
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem;
+      background-color: transparent;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #ff00cc;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #ff00cc;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background-color: #d600b3;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-in-out;
+    }
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    section h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ff00cc;
+      text-align: center;
+    }
+    .services ul {
+      list-style: none;
+      padding-left: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .services li {
+      background-color: #1a0026;
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .testimonial {
+      background-color: #220033;
+      padding: 1rem;
+      border-radius: 12px;
+      animation: fadeIn 1s ease;
+    }
+    .stars {
+      color: gold;
+      margin: 0.5rem 0;
+    }
+      .cta-extra {
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .cta-extra h3 {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .cta-extra p {
+      margin-bottom: 1rem;
+    }
+    .promo {
+      background: linear-gradient(90deg, #ff00cc, #9900ff);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .promo h3 {
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .faq {
+      margin-top: 3rem;
+    }
+    .faq h4 {
+      color: #ff99ff;
+      margin-top: 1rem;
+    }
+    .faq p {
+      margin-bottom: 1rem;
+    }
+    footer {
+      background-color: #0a0014;
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #ccc;
+      margin-top: 3rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 0.5rem;
+      }
+    }
+
+     #backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #ff00cc;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 999;
+  }
+.waveform {
+  width: 100%;
+  height: 80px;
+  margin-top: 1rem;
+  background-color: #1a0026;
+  border-radius: 8px;
+}
+.track {
+  background: #1a0026;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+ /* Loader Spinner */
+#loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0a0014;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 8px solid #330033;
+  border-top: 8px solid #ff00cc;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.nav-link.active {
+  color: #ff00cc;
+ 
+  
+}
+input#searchInput {
+  background-color: #1a0026;
+  color: #fff;
+  border: 1px solid #ff00cc;
+}
+input#searchInput::placeholder {
+  color: #ccc;
+}
+#feedbackPopup {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(10, 0, 20, 0.95);
+  color: #fff;
+  padding: 1rem;
+  z-index: 9999;
+  animation: slideUp 0.5s ease;
+}
+
+.popup-box {
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.popup-box .stars {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.popup-box textarea {
+  width: 100%;
+  border-radius: 8px;
+  padding: 0.5rem;
+  border: none;
+  margin-bottom: 1rem;
+  resize: none;
+  background-color: #1a0026;
+  color: #fff;
+}
+
+.popup-box button {
+  background-color: #ff00cc;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.newsletter {
+  background: #1a0026;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px;
+  margin: 3rem 2rem;
+  color: #fff;
+}
+.newsletter input[type="email"] {
+  padding: 0.6rem;
+  width: 60%;
+  max-width: 300px;
+  border-radius: 8px;
+  border: none;
+  margin-right: 0.5rem;
+}
+.newsletter button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff00cc;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.success-msg {
+  color: lightgreen;
+  margin-top: 1rem;
+}
+body.light-mode {
+  background: #f5f5f5;
+  color: #222;
+}
+
+body.light-mode header {
+  background-color: #ffffff;
+}
+
+body.light-mode nav a {
+  color: #222;
+}
+
+body.light-mode nav a:hover {
+  color: #ff00cc;
+}
+
+body.light-mode .btn {
+  background-color: #ff00cc;
+  color: white;
+}
+
+body.light-mode .btn:hover {
+  background-color: #e600b8;
+}
+
+:root {
+      --bg-dark: #0f0c1a;
+      --bg-darker: #1a1a2e;
+      --text-light: #f0f0f0;
+      --text-dark: #222;
+      --primary: #ff79c6;
+      --primary-hover: #e65fa8;
+
+      --light-bg: #ffffff;
+      --light-alt: #f5f5f5;
+      --light-border: #ddd;
+      --light-primary: #ff4081;
+      --light-primary-hover: #e73370;
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--bg-dark), var(--bg-darker));
+      color: var(--text-light);
+      font-family: 'Outfit', sans-serif;
+      transition: background 0.5s, color 0.5s;
+    }
+    header, footer, section, .track, .testimonial, .promo {
+      background-color: var(--bg-darker);
+      padding: 1rem;
+      border-radius: 10px;
+      margin: 1rem auto;
+      max-width: 960px;
+    }
+    nav a {
+      color: var(--text-light);
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: var(--primary);
+    }
+    .btn {
+      background-color: var(--primary);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: var(--primary-hover);
+    }
+    input, select, textarea {
+      background: #2a2a3c;
+      color: white;
+      padding: 0.5rem;
+      border: 1px solid #444;
+      border-radius: 8px;
+      width: 100%;
+    }
+    input:focus, textarea:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+
+    /* Light mode */
+    body.light-mode {
+      background: linear-gradient(135deg, var(--light-bg), var(--light-alt));
+      color: var(--text-dark);
+    }
+    body.light-mode header,
+    body.light-mode footer,
+    body.light-mode section,
+    body.light-mode .track,
+    body.light-mode .testimonial,
+    body.light-mode .promo {
+      background-color: var(--light-bg);
+      color: var(--text-dark);
+      border: 1px solid var(--light-border);
+    }
+    body.light-mode nav a {
+      color: var(--text-dark);
+    }
+    body.light-mode nav a:hover {
+      color: var(--light-primary);
+    }
+    body.light-mode .btn {
+      background-color: var(--light-primary);
+    }
+    body.light-mode .btn:hover {
+      background-color: var(--light-primary-hover);
+    }
+    body.light-mode input,
+    body.light-mode select,
+    body.light-mode textarea {
+      background: #fff;
+      color: var(--text-dark);
+      border: 1px solid #ccc;
+    }
+    body.light-mode input:focus,
+    body.light-mode textarea:focus {
+      border-color: var(--light-primary);
+    }
+
+    .dark-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 999;
+    }
+    #scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 5px;
+  background: linear-gradient(90deg, #ff00cc, #9900ff);
+  z-index: 9999;
+  transition: width 0.25s ease;
+}
+
+  </style>
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('section').forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          sec.classList.add('show');
+        }
+      });
+    });
+    window.addEventListener('load', () => {
+      document.querySelectorAll('section')[0].classList.add('show');
+    });
+  </script>
+</head>
+<body>
+  <div id="scrollProgress"></div>
+
+  <div id="loader">
+  <div class="spinner"></div>
+</div>
+<script>
+  window.addEventListener("load", function () {
+    const loader = document.getElementById("loader");
+    loader.style.opacity = 0;
+    loader.style.visibility = "hidden";
+    setTimeout(() => loader.remove(), 500);
+  });
+</script>
+
+  <header>
+    <div class="logo">
+      <img src="logo brand.png" alt="PW Music Logo">
+      <span>PW Music</span>
+    </div>
+   <nav>
+  <a href="#about" class="nav-link">About</a>
+  <a href="#services" class="nav-link">Services</a>
+  <a href="#contact" class="nav-link">Contact</a>
+  <button id="darkModeToggle" title="Toggle Dark Mode" style="background:none; border:none; font-size:1.4rem; cursor:pointer; color:#ff00cc;">
+  🌙
+</button>
+
+</nav>
+<script>
+  const toggleBtn = document.getElementById('darkModeToggle');
+  const isDark = localStorage.getItem('theme') === 'dark';
+
+  if (!isDark) {
+    document.body.classList.add('light-mode');
+    toggleBtn.textContent = '☀️';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const isLight = document.body.classList.contains('light-mode');
+    toggleBtn.textContent = isLight ? '☀️' : '🌙';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+</script>
+
+  </header>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
+  <section class="hero">
+    <h2>Home-Based Music Production</h2>
+    <p>Welcome to PW Music — your creative partner in professional home-based music production, remixing services, and arranging. Let’s bring your sound to life with high-quality passion-driven music.</p>
+    <a href="#contact" class="btn">Contact Us</a>
+  </section>
+
+  <section id="about">
+    <h3>About PW Music</h3>
+    <p>PW Music is a professional music production team offering creative, home-based services including remixing, arranging, and mastering. Our mission is to help creators and artists transform ideas into impactful tracks with exceptional quality and style.</p>
+  </section>
+
+  <section id="services" class="services">
+    <h3>Our Services</h3>
+    <ul>
+      <li>🎧 Custom Music Arrangement</li>
+      <li>🔊 Professional Remixing</li>
+      <li>🎼 Jingles & Background Music</li>
+      <li>🎙️ Vocal Editing & Mixing</li>
+      <li>🎵 Mastering for Digital Platforms</li>
+    </ul>
+  </section>
+
+  <section class="promo">
+    <h3>🔥 Limited Time Offer: Get 20% Off Your First Remix!</h3>
+    <a href="https://wa.me/62895368416228" class="btn">Claim Now</a>
+  </section>
+
+  <section class="testimonials">
+    <div class="testimonial">
+      <p>"Amazing quality! My song sounds so professional now."</p>
+      <div class="stars">★★★★★</div>
+      <small>- DJ Ray</small>
+    </div>
+    <div class="testimonial">
+      <p>"Quick turnaround and very creative results. Highly recommended!"</p>
+      <div class="stars">★★★★★</div>
+      <small>- Indie Artist Mia</small>
+    </div>
+    <div class="testimonial">
+      <p>"The best mixing service I've ever tried. Very satisfied!"</p>
+      <div class="stars">★★★★☆</div>
+      <small>- Producer JX</small>
+    </div>
+  </section>
+
+    <section class="cta-extra">
+    <h3>🎁 Free Sample Demo for New Customers!</h3>
+    <p>Send us your vocal or beat and get a free demo mix within 24 hours.</p>
+    <a class="btn" href="https://wa.me/62895368416228" target="_blank">Request Free Demo</a>
+  </section>
+
+    <section id="stats" class="hero">
+    <h2>Our Impact</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem;">
+      <div style="text-align: center; min-width: 150px;">
+        <h3 style="font-size: 2rem; color: #ff00cc;">🎧 250+</h3>
+        <p>Songs Produced</p>
+      </div>
+      <div style="text-align: center; min-width: 150px;">
+        <h3 style="font-size: 2rem; color: #ff00cc;">⭐ 98%</h3>
+        <p>Client Satisfaction</p>
+      </div>
+      <div style="text-align: center; min-width: 150px;">
+        <h3 style="font-size: 2rem; color: #ff00cc;">🌍 10+</h3>
+        <p>Countries Served</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portofolio Section -->
+   
+<section id="portfolio" class="hero">
+  <h2>🎵 Portfolio</h2>
+  <p>Listen to some of our featured works below.</p>
+  <input type="text" id="searchInput" placeholder="🔍 Search track..." onkeyup="searchTrack()" style="padding: 0.5rem 1rem; border-radius: 8px; width: 100%; max-width: 400px; margin: 0 auto 2rem; display: block;">
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+
+    <div class="track">
+      <h4 style="color: #ff99ff;">🎧 Chill Lofi Remix</h4>
+      <div id="waveform1" class="waveform"></div>
+      <button onclick="wavesurfer1.playPause()" class="btn" style="margin-top: 1rem;">Play / Pause</button>
+    </div>
+
+    <div class="track">
+      <h4 style="color: #ff99ff;">🎉 EDM Party Track</h4>
+      <div id="waveform2" class="waveform"></div>
+      <button onclick="wavesurfer2.playPause()" class="btn" style="margin-top: 1rem;">Play / Pause</button>
+    </div>
+
+    <div class="track">
+      <h4 style="color: #ff99ff;">🔥 Hip Hop Beat</h4>
+      <div id="waveform3" class="waveform"></div>
+      <button onclick="wavesurfer3.playPause()" class="btn" style="margin-top: 1rem;">Play / Pause</button>
+    </div>
+
+  </div>
+</section>
+
+
+  <section class="faq">
+    <h3>Q & A</h3>
+    <h4>How long does a remix take?</h4>
+    <p>Usually 3-5 working days depending on complexity.</p>
+    <h4>Can I request revisions?</h4>
+    <p>Yes, we allow up to 2 free revisions per project.</p>
+    <h4>What genres do you specialize in?</h4>
+    <p>Hip hop, EDM, pop, lofi, house, and more!</p>
+  </section>
+
+  <section id="contact" class="hero">
+    <h2>Let’s Work Together</h2>
+    <p>Reach out now and let's create something unforgettable. Contact us via WhatsApp!</p>
+    <a class="btn" href="https://wa.me/62895368416228" target="_blank">WhatsApp Us</a>
+  </section>
+
+   <section id="order" class="hero">
+  <h2>Place Your Order</h2>
+  <p>Fill out the form below and we will get in touch with you on WhatsApp.</p>
+  <form id="orderForm" onsubmit="sendToWhatsApp(); return false;" style="max-width: 600px; margin: 2rem auto; text-align: left;">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required style="width:100%; padding: 0.5rem; border-radius: 8px; margin-bottom: 1rem;"><br>
+    <label for="service">Service Requested:</label><br>
+    <select id="service" name="service" required style="width:100%; padding: 0.5rem; border-radius: 8px; margin-bottom: 1rem;">
+      <option value="">-- Choose a Service --</option>
+      <option value="Custom Music Arrangement">Custom Music Arrangement</option>
+      <option value="Professional Remixing">Professional Remixing</option>
+      <option value="Jingles & Background Music">Jingles & Background Music</option>
+      <option value="Vocal Editing & Mixing">Vocal Editing & Mixing</option>
+      <option value="Mastering for Digital Platforms">Mastering for Digital Platforms</option>
+    </select><br>
+    <label for="details">Details:</label><br>
+    <textarea id="details" name="details" rows="4" required style="width:100%; padding: 0.5rem; border-radius: 8px; margin-bottom: 1rem;"></textarea><br>
+    <button type="submit" class="btn">Send via WhatsApp</button>
+  </form>
+</section>
+
+<script>
+function sendToWhatsApp() {
+  const name = document.getElementById('name').value;
+  const service = document.getElementById('service').value;
+  const details = document.getElementById('details').value;
+  const message = `Hello, my name is ${name}. I want to request the following service: ${service}. Here are the details: ${details}`;
+  const encodedMessage = encodeURIComponent(message);
+  window.open(`https://wa.me/62895368416228?text=${encodedMessage}`, '_blank');
+}
+</script>
+<script type="text/javascript">
+    (function() {
+      var options = {
+        whatsapp: "0895368416228",
+        call_to_action: "Message us",
+        position: "right",
+        pre_filled_message: "Hello PW Music! I have a question about your services.",
+      };
+      var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
+      var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+      s.onload = function() { WhWidgetSendButton.init(host, proto, options); };
+      var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+  </script>
+<!-- WhatsApp Chat via getbutton.io -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            whatsapp: "62895368416228", // Nomor WA
+            call_to_action: "Chat with us", // Tombol
+            position: "right", // left or right
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+
+    <script>
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.style.display = 'flex';
+      } else {
+        backToTop.style.display = 'none';
+      }
+    });
+  </script>
+  <script>
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      const sectionHeight = section.offsetHeight;
+      if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").includes(current)) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+<!-- Wavesurfer CDN -->
+<script src="https://unpkg.com/wavesurfer.js"></script>
+
+<script>
+  const wavesurfer1 = WaveSurfer.create({
+    container: '#waveform1',
+    waveColor: '#ff99ff',
+    progressColor: '#ff00cc',
+    barWidth: 3,
+    height: 80,
+    responsive: true
+  });
+  wavesurfer1.load('1 Minute Timer Lofi.mp3');
+
+  const wavesurfer2 = WaveSurfer.create({
+    container: '#waveform2',
+    waveColor: '#ff99ff',
+    progressColor: '#ff00cc',
+    barWidth: 3,
+    height: 80,
+    responsive: true
+  });
+  wavesurfer2.load('Rnbstylerz - Like Wooh Wooh (The Stickmen Project Remix).mp3');
+
+  const wavesurfer3 = WaveSurfer.create({
+    container: '#waveform3',
+    waveColor: '#ff99ff',
+    progressColor: '#ff00cc',
+    barWidth: 3,
+    height: 80,
+    responsive: true
+  });
+  wavesurfer3.load('Freestyle Rap Beat Hard Boom Bap Type Beat Hip Hop Instrumental - Behind Barz.mp3');
+</script>
+<script>
+  function searchTrack() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const tracks = document.querySelectorAll(".track");
+
+    tracks.forEach(track => {
+      const title = track.querySelector("h4").innerText.toLowerCase();
+      if (title.includes(input)) {
+        track.style.display = "block";
+      } else {
+        track.style.display = "none";
+      }
+    });
+  }
+</script>
+<script>
+  let hasShownPopup = false;
+
+  function closePopup() {
+    document.getElementById('feedbackPopup').style.display = 'none';
+  }
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY || window.pageYOffset;
+    const pageHeight = document.body.scrollHeight - window.innerHeight;
+    const scrollPercent = scrollY / pageHeight;
+
+    if (scrollPercent > 0.8 && !hasShownPopup) {
+      document.getElementById('feedbackPopup').style.display = 'block';
+      hasShownPopup = true;
+    }
+  });
+</script>
+<script>
+function subscribeEmail(event) {
+  event.preventDefault();
+  const email = document.getElementById('emailInput').value;
+
+  // Simulasi kirim email ke database/server (bisa diganti dengan backend/API)
+  console.log("Subscribed email:", email);
+
+  document.getElementById('newsletterMsg').style.display = 'block';
+  document.getElementById('emailInput').value = '';
+}
+</script>
+
+<div id="feedbackPopup" style="display:none;">
+  <div class="popup-box">
+    <h3>🎧 Enjoying PW Music?</h3>
+    <p>We’d love to hear your feedback!</p>
+    <div class="stars">
+      ⭐⭐⭐⭐⭐
+    </div>
+    <textarea placeholder="Leave your feedback..." rows="3"></textarea>
+    <br>
+    <button onclick="closePopup()">Submit</button>
+  </div>
+</div>
+<section class="newsletter">
+  <h3>📥 Subscribe to Our Newsletter</h3>
+  <p>Stay updated with our latest beats, promos, and music tips.</p>
+  <form id="newsletterForm" onsubmit="subscribeEmail(event)">
+    <input type="email" id="emailInput" placeholder="Enter your email..." required />
+    <button type="submit">Subscribe</button>
+  </form>
+  <p id="newsletterMsg" class="success-msg" style="display:none;">Thanks for subscribing!</p>
+</section>
+
+
+<!-- WA Subscribe Section -->
+<section id="waSubscribe" style="margin-top: 3rem; text-align: center;">
+  <div style="background: linear-gradient(135deg, #330033, #1a001f); padding: 2rem; border-radius: 16px; max-width: 600px; margin: auto; box-shadow: 0 0 20px rgba(255,0,204,0.3);">
+    <h3 style="font-size: 1.8rem; color: #ff00cc; margin-bottom: 0.5rem;">📨 Subscribe via WhatsApp</h3>
+    <p style="color: #ddd; margin-bottom: 1.5rem;">Stay connected! Get music updates, promos, and free tips in your WhatsApp. Just enter your email below:</p>
+    <form onsubmit="subscribeViaWA(); return false;" style="display: flex; flex-direction: column; gap: 1rem;">
+      <input 
+        type="email" 
+        id="waEmailInput" 
+        placeholder="Enter your email..." 
+        required
+        style="padding: 0.75rem 1rem; border-radius: 10px; border: none; background-color: #fff; color: #330033; font-size: 1rem;"
+      />
+      <button 
+        type="submit" 
+        class="btn" 
+        style="background: linear-gradient(90deg, #ff00cc, #9900ff); color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 30px; font-weight: bold; cursor: pointer; box-shadow: 0 0 15px rgba(255,0,204,0.4);"
+      >
+        Subscribe via WhatsApp
+      </button>
+    </form>
+    <p id="waSubSuccess" style="color: lightgreen; margin-top: 1rem; display: none;">✅ Your subscription has been sent via WhatsApp.</p>
+  </div>
+</section>
+
+<!-- Script -->
+<script>
+  function subscribeViaWA() {
+    const email = document.getElementById("waEmailInput").value.trim();
+    if (!email) return;
+
+    const message = `Hello PW Music! I want to subscribe to your newsletter. My email is: ${email}`;
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/62895368416228?text=${encoded}`, '_blank');
+
+    document.getElementById("waEmailInput").value = '';
+    document.getElementById("waSubSuccess").style.display = 'block';
+
+    setTimeout(() => {
+      document.getElementById("waSubSuccess").style.display = 'none';
+    }, 4000);
+  }
+</script>
+<script>
+  window.addEventListener("scroll", function () {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (scrollTop / scrollHeight) * 100;
+    document.getElementById("scrollProgress").style.width = scrolled + "%";
+  });
+</script>
+
+  <footer>
+    <p>&copy; 2025 PW Music | Designed with passion. Contact: pwmusic@example.com</p>
+  </footer>
+</body>
+</html>
